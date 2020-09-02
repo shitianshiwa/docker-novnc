@@ -39,9 +39,11 @@ RUN groupadd user && useradd -m -g user user && \
     # git clone --depth=1 https://github.com/novnc/noVNC.git /app/src/novnc && \
     # git clone --depth=1 https://github.com/novnc/websockify.git /app/src/websockify && \
     wget -O /tmp/noVNC-1.1.0.tar.gz https://github.com/novnc/noVNC/archive/v1.1.0.tar.gz && \
+    chmod 755 /tmp/noVNC-1.1.0.tar.gz && \
     mkdir -p /app/src/novnc && \
     tar xf /tmp/noVNC-1.1.0.tar.gz -C /app/src/novnc && \
     wget -O /tmp/websockify-0.9.0.tar.gz https://github.com/novnc/websockify/archive/v0.9.0.tar.gz && \
+    chmod 755 /tmp/websockify-0.9.0.tar.gz && \
     mkdir -p /app/src/websockify && \
     tar xf /tmp/websockify-0.9.0.tar.gz -C /app/src/websockify && \
     apt-get purge -y git wget && \
